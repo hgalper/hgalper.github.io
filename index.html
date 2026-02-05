@@ -150,8 +150,25 @@
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .headshot {
+            width: 200px;
+            height: 200px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            flex-shrink: 0;
         }
 
         .title {
@@ -358,6 +375,16 @@
             .research-grid {
                 grid-template-columns: 1fr;
             }
+
+            .hero-content {
+                flex-direction: column-reverse;
+                align-items: center;
+            }
+
+            .headshot {
+                width: 150px;
+                height: 150px;
+            }
         }
 
         html {
@@ -382,6 +409,8 @@
         <section id="home" class="active">
             <div id="hero">
                 <div class="hero-content">
+                    <img src="headshot.jpg" alt="Hernan Galperin" class="headshot">
+                    <div class="hero-text">
                     <h1>Hernan Galperin</h1>
                     <p class="title">Professor of Communications</p>
                     <p class="affiliation">USC Annenberg School for Communication & Journalism</p>
@@ -391,7 +420,7 @@
                     <div class="contact-info">
                         <div class="contact-item">
                             <span class="label">Email:</span>
-                            <a href="mailto:hernan.galperin@usc.edu">hernan.galperin@usc.edu</a>
+                            <a href="/cdn-cgi/l/email-protection#ec84899e828d82c28b8d809c899e8582ac999f8fc2898899"><span class="__cf_email__" data-cfemail="2a424f58444b44044d4b465a4f5843446a5f5949044f4e5f">[email&#160;protected]</span></a>
                         </div>
                         <div class="contact-item">
                             <span class="label">Phone:</span>
@@ -407,6 +436,7 @@
                         <a href="https://www.linkedin.com/in/hernan-galperin-0b7200" target="_blank">LinkedIn</a>
                         <a href="https://annenberg.usc.edu/faculty/hernan-galperin" target="_blank">USC Profile</a>
                         <a href="https://arnicusc.org" target="_blank">ARNIC</a>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -424,32 +454,6 @@
                     for development (ICT4D). I have conducted extensive research on digital divides, internet adoption, 
                     and telecommunications policy in Latin America and the United States.
                 </p>
-            </div>
-
-            <div class="section-container" style="background-color: var(--bg-light);">
-                <h2>Research Areas</h2>
-                <div class="research-grid">
-                    <div class="research-card">
-                        <h3>Digital Inequality</h3>
-                        <p>Examining barriers to internet access and adoption, with focus on socioeconomic factors, 
-                           geographic disparities, and policy interventions.</p>
-                    </div>
-                    <div class="research-card">
-                        <h3>Broadband Policy</h3>
-                        <p>Analyzing telecommunications regulation, universal service programs, and the effectiveness 
-                           of broadband subsidy initiatives.</p>
-                    </div>
-                    <div class="research-card">
-                        <h3>ICT4D</h3>
-                        <p>Investigating the role of digital technologies in economic development, poverty reduction, 
-                           and social inclusion in Latin America.</p>
-                    </div>
-                    <div class="research-card">
-                        <h3>Platform Economics</h3>
-                        <p>Studying labor dynamics, discrimination, and geographic factors in digital platform economies 
-                           and the gig economy.</p>
-                    </div>
-                </div>
             </div>
 
             <div class="section-container">
@@ -476,15 +480,6 @@
                 </div>
             </div>
 
-            <div class="section-container" style="background-color: var(--bg-light);">
-                <h2>Awards & Recognition</h2>
-                <ul class="awards-list">
-                    <li><strong>2023</strong> - International Communication Association (ICA), Communication Law and Policy Division, Top Paper Award</li>
-                    <li><strong>2020</strong> - International Communication Association (ICA), Communication Law and Policy Division, Top Paper Award</li>
-                    <li><strong>2018</strong> - Member, Information and Entertainment Global Future Council, World Economic Forum</li>
-                    <li><strong>2015-17</strong> - Member and Research Advisor, Global Commission on Internet Governance</li>
-                </ul>
-            </div>
         </section>
 
         <section id="research">
@@ -633,7 +628,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         function showSection(sectionId) {
             // Hide all sections
             document.querySelectorAll('section').forEach(section => {
@@ -646,14 +641,4 @@
             });
             
             // Show selected section
-            document.getElementById(sectionId).classList.add('active');
-            
-            // Add active class to clicked nav link
-            event.target.classList.add('active');
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-    </script>
-</body>
-</html>
+            document.getElementById(sectionId).classList.add('
