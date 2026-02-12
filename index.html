@@ -439,11 +439,7 @@
 
                         <div class="contact-info">
                             <div class="contact-item">
-                                <a href="/cdn-cgi/l/email-protection#4a222f38242b24642d2b263a2f3823240a3f3929642f2e3f">
-                                    <span class="__cf_email__" data-cfemail="4b232e39252a25652c2a273b2e3922250b3e3828652e2f3e">
-                                        [email&#160;protected]
-                                    </span>
-                                </a>
+                                <span id="email-link"></span>
                                 &nbsp; | &nbsp;
                                 <a href="CV.pdf" target="_blank">CV</a>
                                 &nbsp; | &nbsp;
@@ -644,7 +640,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    
     <script>
         function showSection(sectionId) {
             // Hide all sections
@@ -667,6 +663,24 @@
                 });
             }
         }
+    </script>
+
+    <script>
+        // Assemble email address in the browser to reduce simple scraping.
+        (function() {
+            var user = "hernan.galperin"; // local-part
+            var domain = "usc.edu";       // domain
+            var email = user + "@" + domain;
+            var container = document.getElementById("email-link");
+            if (container) {
+                var a = document.createElement("a");
+                a.href = "mailto:" + email;
+                a.textContent = email;
+                a.setAttribute("rel", "nofollow noreferrer noopener");
+                container.appendChild(a);
+                container.setAttribute("aria-label", "Contact email: " + email);
+            }
+        })();
     </script>
 </body>
 </html>
