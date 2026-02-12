@@ -173,7 +173,7 @@
         .title {
             font-size: 1.5rem;
             color: var(--text-medium);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
             font-family: 'Work Sans', sans-serif;
             font-weight: 500;
         }
@@ -181,22 +181,23 @@
         .affiliation {
             font-size: 1.25rem;
             color: var(--primary-color);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.1rem;
             font-weight: 600;
         }
 
         .role {
             font-size: 1.1rem;
             color: var(--text-medium);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.1rem;
+            line-height: 1.4;
         }
 
         .contact-info {
-            margin: 1.5rem 0;
+            margin: 0.75rem 0 0 0;
         }
 
         .contact-item {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
             color: var(--text-medium);
             font-size: 0.95rem;
         }
@@ -351,6 +352,18 @@
         }
 
 
+
+        .photo-links {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .photo-links a {
+            font-size: 0.95rem;
+            color: var(--text-medium);
+        }
         .linkedin-link {
             display: inline-flex;
             align-items: center;
@@ -425,7 +438,7 @@
                     
                     <div class="contact-info">
                         <div class="contact-item">
-                            <a href="mailto:hernan.galperin@usc.edu">hernan.galperin@usc.edu</a>
+                            <a href="/cdn-cgi/l/email-protection#4a222f38242b24642d2b263a2f3823240a3f3929642f2e3f"><span class="__cf_email__" data-cfemail="4b232e39252a25652c2a273b2e3922250b3e3828652e2f3e">[email&#160;protected]</span></a>
                         </div>
                         <div class="contact-item">
                             +1-213-821-1320
@@ -635,17 +648,11 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         function showSection(sectionId) {
             // Hide all sections
             document.querySelectorAll('section').forEach(section => {
                 section.classList.remove('active');
             });
             
-            // Remove active class from all nav links
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.classList.remove('active');
-            });
-            
-            // Show selected section
-            document.getElementById(sectionId).classList.add('
+            // Remove active class from all nav link
