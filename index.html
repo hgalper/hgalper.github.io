@@ -1,20 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Hernan Galperin - USC Annenberg</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary-color: #990000;
             --primary-dark: #660000;
@@ -24,131 +18,40 @@
             --bg-light: #f8f8f8;
             --bg-white: #ffffff;
             --border-color: #e0e0e0;
-            --accent-gold: #c69214;
         }
-
         body {
-            font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Work Sans', sans-serif;
             font-size: 16px;
             line-height: 1.7;
             color: var(--text-dark);
             background-color: var(--bg-white);
         }
-
         h1, h2, h3, h4 {
-            font-family: 'Crimson Pro', Georgia, serif;
+            font-family: 'Crimson Pro', serif;
             font-weight: 600;
-            line-height: 1.3;
-            color: var(--text-dark);
         }
-
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
+        h1 { font-size: 3.5rem; margin-bottom: 1rem; }
         h2 {
             font-size: 2.25rem;
             margin-bottom: 1.5rem;
             border-bottom: 3px solid var(--primary-color);
             padding-bottom: 0.5rem;
         }
-
-        h3 {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-        }
-
-        h4 {
-            font-size: 1.35rem;
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-        }
-
-        p {
-            margin-bottom: 1rem;
-        }
-
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--primary-dark);
-        }
-
-        nav {
-            background-color: var(--bg-white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.25rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-name {
-            font-family: 'Crimson Pro', Georgia, serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            font-weight: 500;
-            color: var(--text-medium);
-            padding: 0.5rem 0;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary-color);
-            border-bottom-color: var(--primary-color);
-        }
-
-        main {
-            min-height: calc(100vh - 200px);
-        }
-
         .section-container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 2rem 2rem; /* reduced spacing */
         }
-
-        section {
-            display: none;
-        }
-
-        section.active {
-            display: block;
-        }
-
-        #hero {
-            background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
-            padding: 5rem 2rem 4rem;
+        nav {
+            background-color: var(--bg-white);
             border-bottom: 1px solid var(--border-color);
+            padding: 1.25rem 2rem;
         }
-
+        .nav-name { font-size: 1.5rem; font-weight: 700; }
+        #hero {
+            background: var(--bg-light);
+            padding: 4rem 2rem;
+        }
         .hero-content {
             max-width: 900px;
             margin: 0 auto;
@@ -156,503 +59,57 @@
             gap: 3rem;
             align-items: flex-start;
         }
-
-        .hero-text {
-            flex: 1;
-        }
-
         .headshot {
             width: 250px;
             height: 250px;
             border-radius: 8px;
             object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            flex-shrink: 0;
         }
-
-        .title {
-            font-size: 1.5rem;
-            color: var(--text-medium);
-            margin-bottom: 0.25rem;
-            font-family: 'Work Sans', sans-serif;
-            font-weight: 500;
-        }
-
-        .affiliation {
-            font-size: 1.25rem;
-            color: var(--primary-color);
-            margin-bottom: 0.1rem;
-            font-weight: 600;
-        }
-
-        .role {
-            font-size: 1.1rem;
-            color: var(--text-medium);
-            margin-bottom: 0.1rem;
-            line-height: 1.4;
-        }
-
-        .contact-info {
-            margin: 0.75rem 0 0 0;
-        }
-
-        .contact-item {
-            margin-bottom: 0.25rem;
-            color: var(--text-medium);
-            font-size: 0.95rem;
-        }
-
-        .contact-item .label {
-            font-weight: 600;
-            color: var(--text-medium);
-            margin-right: 0.5rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .social-links a {
-            font-weight: 600;
-            padding: 0.75rem 1.5rem;
-            background-color: var(--primary-color);
-            color: white;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(153, 0, 0, 0.3);
-        }
-
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .research-card {
-            background-color: var(--bg-white);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 3px solid var(--primary-color);
-        }
-
-        .research-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-        }
-
-        .research-card h3 {
-            color: var(--primary-color);
-            font-size: 1.4rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .publications-list {
-            margin-top: 2rem;
-        }
-
-        .publication {
-            padding: 1.75rem 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .publication:last-child {
-            border-bottom: none;
-        }
-
-        .publication.book {
-            background-color: var(--bg-light);
-            padding: 1.75rem;
-            border-radius: 6px;
-            margin-bottom: 1.5rem;
-            border-bottom: none;
-        }
-
-        .publication .authors {
-            color: var(--text-medium);
-            font-size: 0.95rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .publication .venue {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .doi-link {
-            display: inline-block;
-            font-size: 0.85rem;
-            padding: 0.25rem 0.75rem;
-            background-color: var(--bg-light);
-            border-radius: 3px;
-            font-weight: 500;
-            margin-top: 0.5rem;
-        }
-
-        .doi-link:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .awards-list {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-
-        .awards-list li {
-            padding: 1.25rem;
-            margin-bottom: 1rem;
-            background-color: var(--bg-light);
-            border-left: 4px solid var(--accent-gold);
-            border-radius: 4px;
-        }
-
-        .project-card {
-            background-color: var(--bg-white);
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-            border-left: 5px solid var(--primary-color);
-        }
-
-        .project-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .funder {
-            font-weight: 600;
-            color: var(--text-medium);
-            margin-bottom: 1rem;
-        }
-
-        footer {
-            background-color: var(--text-dark);
-            color: white;
-            padding: 2.5rem 2rem;
-            margin-top: 4rem;
-            text-align: center;
-        }
-
-        .footer-container p {
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-
-
-        .photo-links {
-            margin-top: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .photo-links a {
-            font-size: 0.95rem;
-            color: var(--text-medium);
-        }
-        .linkedin-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .linkedin-icon {
-            width: 24px;
-            height: 24px;
-        }
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 1rem;
-            }
-            
-            .research-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-content {
-                flex-direction: column-reverse;
-                align-items: center;
-            }
-
-            .headshot {
-                width: 180px;
-                height: 180px;
-            }
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
+        .contact-info { margin-top: 1rem; font-size: 0.95rem; }
+        a { color: var(--primary-color); text-decoration: none; }
+        a:hover { color: var(--primary-dark); }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <span class="nav-name">Hernan Galperin, Ph.D.</span>
-            <div class="nav-links">
-                <a onclick="showSection('home')" class="active">Home</a>
-                <a onclick="showSection('research')">Research</a>
-                <a onclick="showSection('publications')">Publications</a>
-                <a onclick="showSection('teaching')">Teaching</a>
+
+<nav>
+    <span class="nav-name">Hernan Galperin, Ph.D.</span>
+</nav>
+
+<section id="home">
+    <div id="hero">
+        <div class="hero-content">
+            <img src="headshot.jpg" alt="Hernan Galperin" class="headshot">
+            <div>
+                <h1>Hernan Galperin</h1>
+                <p>Professor of Communications</p>
+                <p>USC Annenberg School for Communication & Journalism</p>
+                <p>Director of Doctoral Studies</p>
+
+                <div class="contact-info">
+                    <a href="mailto:email@example.com">email@example.com</a>
+                    &nbsp; | &nbsp;
+                    <a href="CV.pdf" target="_blank">CV</a>
+                    &nbsp; | &nbsp;
+                    <a href="https://www.linkedin.com/in/hernan-galperin-0b7200" target="_blank">LinkedIn</a>
+                </div>
             </div>
         </div>
-    </nav>
+    </div>
 
-    <main>
-        <section id="home" class="active">
-            <div id="hero">
-                <div class="hero-content">
-                    <img src="headshot.jpg" alt="Hernan Galperin" class="headshot">
-                    <div class="hero-text">
-                    <h1>Hernan Galperin</h1>
-                    <p class="title">Professor of Communications</p>
-                    <p class="affiliation">USC Annenberg School for Communication & Journalism</p>
-                    <p class="role">Director of Doctoral Studies</p>
-                    <p class="role">Director, Annenberg Research Network on International Communication (ARNIC)</p>
-                    
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <a href="/cdn-cgi/l/email-protection#4a222f38242b24642d2b263a2f3823240a3f3929642f2e3f"><span class="__cf_email__" data-cfemail="4b232e39252a25652c2a273b2e3922250b3e3828652e2f3e">[email&#160;protected]</span></a>
-                        </div>
-                        <div class="contact-item">
-                            +1-213-821-1320
-                        </div>
-                        <div class="contact-item">
-                            3502 Watt Way, Los Angeles, CA 90089
-                        </div>
-                        <div class="contact-item">
-                            <a href="CV.pdf" target="_blank">CV</a>
-                        </div>
-                    </div>
+    <div class="section-container">
+        <h2>About</h2>
+        <p>
+            I am a Professor of Communication at the USC Annenberg School for Communication and Journalism, 
+            where I serve as Director of Doctoral Studies.
+        </p>
+    </div>
 
-                    <a href="https://www.linkedin.com/in/hernan-galperin-0b7200" target="_blank" class="linkedin-link">
-                        <svg class="linkedin-icon" fill="#0077b5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                        </svg>
-                        LinkedIn
-                    </a>
-                    </div>
-                </div>
-            </div>
+    <div class="section-container">
+        <h2>Recent Publications</h2>
+        <p>Recent work listed here.</p>
+    </div>
+</section>
 
-            <div class="section-container">
-                <h2>About</h2>
-                <p>
-                    I am a Professor of Communication at the USC Annenberg School for Communication and Journalism, 
-                    where I serve as Director of Doctoral Studies and Director of the Annenberg Research Network on 
-                    International Communication (ARNIC).
-                </p>
-                <p>
-                    My research focuses on the social and economic impacts of digital technologies, with particular 
-                    emphasis on digital inequality, broadband policy, and information and communication technologies 
-                    for development (ICT4D). I have conducted extensive research on digital divides, internet adoption, 
-                    and telecommunications policy in Latin America and the United States.
-                </p>
-            </div>
-
-            <div class="section-container">
-                <h2>Recent Publications</h2>
-                <div class="publications-list">
-                    <div class="publication">
-                        <h4>Welfare stigma and the take-up of consumer broadband subsidies</h4>
-                        <p class="authors">Galperin, H., & Heonuk, H. (2024)</p>
-                        <p class="venue"><em>Journal of Information Policy</em>, 14, 279-312.</p>
-                        <a href="https://doi.org/10.5325/jinfopoli.14.2024.0009" target="_blank" class="doi-link">DOI</a>
-                    </div>
-                    <div class="publication">
-                        <h4>Understanding uptake in demand-side broadband subsidy programs</h4>
-                        <p class="authors">Horrigan, J., Whitacre, B., & Galperin, H. (2024)</p>
-                        <p class="venue"><em>Telecommunications Policy</em>, 48(8).</p>
-                        <a href="https://doi.org/10.1016/j.telpol.2024.102812" target="_blank" class="doi-link">DOI</a>
-                    </div>
-                    <div class="publication">
-                        <h4>The impact of digital competence on telehealth utilization</h4>
-                        <p class="authors">Le, T., Galperin, H., & Traube, D. (2023)</p>
-                        <p class="venue"><em>Health Policy and Technology</em>, 12(1).</p>
-                        <a href="https://doi.org/10.1016/j.hlpt.2023.100724" target="_blank" class="doi-link">DOI</a>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section id="research">
-            <div class="section-container">
-                <h2>Research</h2>
-                <p style="font-size: 1.2rem; color: var(--text-medium);">
-                    My research program examines the social and economic impacts of digital technologies, 
-                    with a focus on understanding and addressing digital inequalities. I employ quantitative 
-                    methods to analyze large-scale datasets, conduct field experiments, and evaluate policy 
-                    interventions aimed at expanding broadband access and digital inclusion.
-                </p>
-
-                <h2 style="margin-top: 3rem;">Current Projects</h2>
-                
-                <div class="project-card">
-                    <h3>Measuring the Effectiveness of Digital Inclusion Approaches (MEDIA)</h3>
-                    <p class="role">Co-Principal Investigator</p>
-                    <p class="funder">Funded by: The Pew Trust</p>
-                    <p>
-                        This multi-phase project evaluates the impact of the Affordable Connectivity Program (ACP) 
-                        and other digital inclusion initiatives. We analyze program uptake, assess barriers to 
-                        enrollment, and examine the effects of broadband subsidies on employment, education, and health outcomes.
-                    </p>
-                </div>
-
-                <div class="project-card">
-                    <h3>Broadband Adoption Statewide Survey</h3>
-                    <p class="role">Co-Principal Investigator</p>
-                    <p class="funder">Funded by: California Emerging Technology Fund / California Department of Technology</p>
-                    <p>
-                        Comprehensive assessment of broadband adoption and digital equity in California, examining 
-                        barriers to internet access, digital literacy levels, and the effectiveness of state programs 
-                        aimed at closing the digital divide.
-                    </p>
-                </div>
-
-                <div class="project-card">
-                    <h3>Annenberg Research Network on International Communication (ARNIC)</h3>
-                    <p class="role">Director</p>
-                    <p>
-                        As Director of ARNIC, I lead a research initiative focused on international communication policy, 
-                        digital inclusion, and the global diffusion of information and communication technologies. 
-                        ARNIC produces policy research, convenes expert dialogues, and supports Ph.D. students working 
-                        on international communication issues.
-                    </p>
-                    <a href="https://arnicusc.org" target="_blank" style="display: inline-block; margin-top: 1rem; padding: 0.6rem 1.2rem; background-color: var(--primary-color); color: white; border-radius: 4px;">Visit ARNIC Website →</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="publications">
-            <div class="section-container">
-                <h2>Publications</h2>
-                
-                <h3 style="margin-top: 2rem; color: var(--primary-color);">Books</h3>
-                <div class="publications-list">
-                    <div class="publication book">
-                        <h4>The information lives of the poor</h4>
-                        <p class="authors">Elder, L., Samarajiva, R., Gilwald, A., & Galperin, H. (2014)</p>
-                        <p class="venue">Ottawa: IDRC Publishing.</p>
-                    </div>
-                    <div class="publication book">
-                        <h4>Comunicación móvil y desarrollo en América Latina</h4>
-                        <p class="authors">Castells, M., Galperin, H., & Fernandez-Ardevol, M. (2011)</p>
-                        <p class="venue">Barcelona: Ariel.</p>
-                    </div>
-                    <div class="publication book">
-                        <h4>New TV, Old politics: The Transition to Digital TV in the US and Britain</h4>
-                        <p class="authors">Galperin, H. (2004)</p>
-                        <p class="venue">Cambridge: Cambridge University Press.</p>
-                    </div>
-                </div>
-
-                <h3 style="margin-top: 3rem; color: var(--primary-color);">Selected Journal Articles</h3>
-                <div class="publications-list">
-                    <div class="publication">
-                        <h4>Welfare stigma and the take-up of consumer broadband subsidies</h4>
-                        <p class="authors">Galperin, H., & Heonuk, H. (2024)</p>
-                        <p class="venue"><em>Journal of Information Policy</em>, 14, 279-312.</p>
-                        <a href="https://doi.org/10.5325/jinfopoli.14.2024.0009" target="_blank" class="doi-link">DOI</a>
-                    </div>
-                    <div class="publication">
-                        <h4>Understanding uptake in demand-side broadband subsidy programs</h4>
-                        <p class="authors">Horrigan, J., Whitacre, B., & Galperin, H. (2024)</p>
-                        <p class="venue"><em>Telecommunications Policy</em>, 48(8).</p>
-                        <a href="https://doi.org/10.1016/j.telpol.2024.102812" target="_blank" class="doi-link">DOI</a>
-                    </div>
-                    <div class="publication">
-                        <h4>The impact of broadband on poverty reduction in rural Ecuador</h4>
-                        <p class="authors">Galperin, H., Katz, R., & Valencia, R. (2022)</p>
-                        <p class="venue"><em>Telematics and Informatics</em>, 75.</p>
-                        <a href="https://doi.org/10.1016/j.tele.2022.101905" target="_blank" class="doi-link">DOI</a>
-                    </div>
-                    <div class="publication">
-                        <h4>Who gets access to fast broadband? Evidence from Los Angeles County</h4>
-                        <p class="authors">Galperin, H., Le, T., & Daum, K. (2021)</p>
-                        <p class="venue"><em>Government Information Quarterly</em>, 38(3).</p>
-                        <a href="https://doi.org/10.1016/j.giq.2021.101594" target="_blank" class="doi-link">DOI</a>
-                    </div>
-                    <div class="publication">
-                        <h4>"This gig is not for women": Gender stereotyping in online hiring</h4>
-                        <p class="authors">Galperin, H. (2019)</p>
-                        <p class="venue"><em>Social Science Computer Review</em>, 39(6), 1089-1107.</p>
-                        <a href="https://doi.org/10.1177/0894439319895757" target="_blank" class="doi-link">DOI</a>
-                    </div>
-                    <div class="publication">
-                        <h4>Why are half of Latin Americans not online? A four-country study of reasons for Internet non-adoption</h4>
-                        <p class="authors">Galperin, H. (2017)</p>
-                        <p class="venue"><em>International Journal of Communication</em>, 11, 3332-3354.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="teaching">
-            <div class="section-container">
-                <h2>Teaching</h2>
-                <p style="font-size: 1.2rem; color: var(--text-medium); margin-bottom: 2rem;">
-                    I believe in research-informed teaching that connects theoretical frameworks to real-world 
-                    policy challenges. My courses emphasize quantitative methods, critical analysis of empirical 
-                    evidence, and the application of communication research to address pressing social issues.
-                </p>
-
-                <h3 style="color: var(--primary-color); margin-top: 2rem;">Doctoral Mentorship</h3>
-                <p>
-                    As Director of Doctoral Studies at USC Annenberg, I oversee the Ph.D. program and mentor 
-                    doctoral students working on topics related to digital inequality, telecommunications policy, 
-                    and international communication.
-                </p>
-
-                <h3 style="color: var(--primary-color); margin-top: 2rem;">Academic Service</h3>
-                <ul style="margin-left: 2rem;">
-                    <li style="margin-bottom: 0.5rem;"><strong>Director of Doctoral Studies</strong> - USC Annenberg (2023-present)</li>
-                    <li style="margin-bottom: 0.5rem;"><strong>Director, ARNIC</strong> - Annenberg Research Network on International Communication (2016-present)</li>
-                    <li style="margin-bottom: 0.5rem;"><strong>Assistant Dean, Excellence in Teaching</strong> - USC Annenberg (2018-2021)</li>
-                    <li style="margin-bottom: 0.5rem;">Editorial Board Member: <em>Telecommunications Policy, Latin American Journal of Digital Economy, Digital Policy Regulation and Governance</em></li>
-                </ul>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-container">
-            <p>&copy; 2025 Hernan Galperin. All rights reserved.</p>
-            <p>USC Annenberg School for Communication and Journalism</p>
-        </div>
-    </footer>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        function showSection(sectionId) {
-            // Hide all sections
-            document.querySelectorAll('section').forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Remove active class from all nav link
+</body>
+</html>
